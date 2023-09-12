@@ -17,7 +17,7 @@ namespace MDKAppDB
         private void button1_Click(object sender, EventArgs e)
         {
             // Создаем или перезаписываем файл базы данных SQLite
-            string dbFilePath = @"C:\\Users\\Sterben\\Desktop\\dir\\your_database.db";
+            string dbFilePath = @"C:\GitProjectMDK\MDKAppDB\MDKAppDB\bin\Debug\dir\\your_database.db";
             SQLiteConnection.CreateFile(dbFilePath);
 
             // Создаем подключение к базе данных
@@ -33,11 +33,11 @@ namespace MDKAppDB
                 }
 
                 // Вставляем данные
-                InsertData(connection, @"C:\Users\Sterben\Desktop\dir\1.PNG", @"C:\Users\Sterben\Desktop\dir\2.PNG", "1");
-                InsertData(connection, @"C:\Users\Sterben\Desktop\dir\3.PNG", @"C:\Users\Sterben\Desktop\dir\4.PNG", "2");
-                InsertData(connection, @"C:\Users\Sterben\Desktop\dir\5.PNG", @"C:\Users\Sterben\Desktop\dir\6.PNG", "3");
-                InsertData(connection, @"C:\Users\Sterben\Desktop\dir\7.PNG", @"C:\Users\Sterben\Desktop\dir\8.PNG", "4");
-                InsertData(connection, @"C:\Users\Sterben\Desktop\dir\9.PNG", @"C:\Users\Sterben\Desktop\dir\10.PNG", "5");
+                InsertData(connection, @"C:\GitProjectMDK\MDKAppDB\MDKAppDB\bin\Debug\dir\1.PNG", @"C:\GitProjectMDK\MDKAppDB\MDKAppDB\bin\Debug\dir\2.PNG", "Движки");
+                InsertData(connection, @"C:\GitProjectMDK\MDKAppDB\MDKAppDB\bin\Debug\dir\3.PNG", @"C:\GitProjectMDK\MDKAppDB\MDKAppDB\bin\Debug\dir\4.PNG", "3D модели");
+                InsertData(connection, @"C:\GitProjectMDK\MDKAppDB\MDKAppDB\bin\Debug\dir\5.PNG", @"C:\GitProjectMDK\MDKAppDB\MDKAppDB\bin\Debug\dir\6.PNG", "Редактор музыки");
+                InsertData(connection, @"C:\GitProjectMDK\MDKAppDB\MDKAppDB\bin\Debug\dir\7.PNG", @"C:\GitProjectMDK\MDKAppDB\MDKAppDB\bin\Debug\dir\8.PNG", "Браузеры");
+                InsertData(connection, @"C:\GitProjectMDK\MDKAppDB\MDKAppDB\bin\Debug\dir\9.PNG", @"C:\GitProjectMDK\MDKAppDB\MDKAppDB\bin\Debug\dir\10.PNG", "Редакторы кода");
 
                 connection.Close();
             }
@@ -59,7 +59,7 @@ namespace MDKAppDB
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string dbFilePath = @"C:\\Users\\Sterben\\Desktop\\dir\\your_database.db";
+            string dbFilePath = @"C:\GitProjectMDK\MDKAppDB\MDKAppDB\bin\Debug\dir\\your_database.db";
             string connectionString = $"Data Source={dbFilePath};Version=3;";
 
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
@@ -96,7 +96,7 @@ namespace MDKAppDB
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string dbFilePath = @"C:\\Users\\Sterben\\Desktop\\dir\\your_database.db";
+            string dbFilePath = @"C:\GitProjectMDK\MDKAppDB\MDKAppDB\bin\Debug\dir\\your_database.db";
             string connectionString = $"Data Source={dbFilePath};Version=3;";
 
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
@@ -133,7 +133,7 @@ namespace MDKAppDB
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string dbFilePath = @"C:\\Users\\Sterben\\Desktop\\dir\\your_database.db";
+            string dbFilePath = @"C:\GitProjectMDK\MDKAppDB\MDKAppDB\bin\Debug\dir\\your_database.db";
             string connectionString = $"Data Source={dbFilePath};Version=3;";
 
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
@@ -170,7 +170,7 @@ namespace MDKAppDB
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string dbFilePath = @"C:\\Users\\Sterben\\Desktop\\dir\\your_database.db";
+            string dbFilePath = @"C:\GitProjectMDK\MDKAppDB\MDKAppDB\bin\Debug\dir\\your_database.db";
             string connectionString = $"Data Source={dbFilePath};Version=3;";
 
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
@@ -207,7 +207,7 @@ namespace MDKAppDB
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string dbFilePath = @"C:\\Users\\Sterben\\Desktop\\dir\\your_database.db";
+            string dbFilePath = @"C:\GitProjectMDK\MDKAppDB\MDKAppDB\bin\Debug\dir\\your_database.db";
             string connectionString = $"Data Source={dbFilePath};Version=3;";
 
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
