@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SQLite;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -53,6 +54,43 @@ namespace MDKAppDB
                 command.Parameters.AddWithValue("@TextColumn", textValue);
 
                 command.ExecuteNonQuery();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string dbFilePath = @"C:\\Users\\Sterben\\Desktop\\dir\\your_database.db";
+            string connectionString = $"Data Source={dbFilePath};Version=3;";
+
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SQLiteCommand command = new SQLiteCommand("SELECT Image1, Image2, TextColumn FROM ImagesTable LIMIT 1;", connection))
+                {
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            byte[] image1Bytes = (byte[])reader["Image1"];
+                            byte[] image2Bytes = (byte[])reader["Image2"];
+                            string textValue = reader["TextColumn"].ToString();
+
+                            // Загрузка изображений в pictureBox1 и pictureBox2
+                            using (MemoryStream stream1 = new MemoryStream(image1Bytes))
+                            using (MemoryStream stream2 = new MemoryStream(image2Bytes))
+                            {
+                                pictureBox1.Image = Image.FromStream(stream1);
+                                pictureBox2.Image = Image.FromStream(stream2);
+                            }
+
+                            // Установка текста в label1
+                            label1.Text = textValue;
+                        }
+                    }
+                }
+
+                connection.Close();
             }
         }
     }
